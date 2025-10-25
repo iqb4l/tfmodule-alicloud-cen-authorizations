@@ -13,17 +13,7 @@ variable "cen_id" {
   type        = string
 }
 
-variable "vpc_attachments" {
-  description = "Daftar konfigurasi attachment VPC yang perlu diberikan grant."
-  type = list(object({
-    name         = string
-    vpc_id       = string
-    vpc_owner_id = string
-    cen_owner_id = string
-  }))
-}
-
-variable "env" {
-  description = "Environment (misal: prod, nonprod)."
+variable "vpc_id" {
   type        = string
+  description = "The ID of VPC to attach to CEN (from VPC module output)"
 }
